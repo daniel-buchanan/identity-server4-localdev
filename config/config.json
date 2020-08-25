@@ -1,0 +1,50 @@
+{
+    "Clients": [
+        {
+            "ClientId": "m2m.client",
+            "ClientName": "Client Credentials Client",
+            "AllowedGrantTypes": [ "client_credentials" ],
+            "ClientSecrets": [
+
+            ],
+            "AllowedScopes": [ "scope1" ]
+        },
+        {
+            "ClientId": "interactive",
+            "ClientName": "Interactive Client",
+            "AllowedGrantTypes": [ "code" ],
+            "RedirectUrlis": [ "https://localhost:44300/signin-oidc" ],
+            "FrontChannelLogoutUri": "https://localhost:44300/signout-oidc",
+            "PostLogoutRedirectUris": [ "https://localhost:44300/signout-callback-oidc" ],
+            "AllowOfflineAccess": true,
+            "ClientSecrets": [
+
+            ],
+            "AllowedScopes": [ "openid", "profile", "scope2" ]
+        }
+    ],
+    "Scopes": [
+        {
+            "Name": "scope1",
+            "Description": "The First Scope"
+        },
+        {
+            "Name": "scope2",
+            "Description": "The Second Scope"
+        }
+    ],
+    "IdentityResources": [
+        { "Name": "openid" },
+        { "Name": "profile" }
+    ],
+    "Users": [
+        {
+            "SubjectId": "1",
+            "Username": "bob@bob.com",
+            "Password": "Password.1",
+            "Claims": [
+                { "Type": "name", "Value": "bob" }
+            ]
+        }
+    ]
+}
